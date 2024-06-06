@@ -1,0 +1,60 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	C:/c++/rainbow_tables/rainbow_tables/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/80ee839/
+build_table	rainbow_builder.cpp	/^int rainbow_builder::build_table(std::string filename){$/;"	f	class:rainbow_builder	typeref:typename:int
+common_defines	common_defines.h	/^  #define common_defines$/;"	d
+gen_table_row	rainbow_builder.cpp	/^int rainbow_builder::gen_table_row(std::string* row){$/;"	f	class:rainbow_builder	typeref:typename:int
+hash_STUB_h	hash_STUB.h	/^#define hash_STUB_h$/;"	d
+hash_func	rainbow_builder.h	/^    int (*hash_func)(std::string*, s_byte_array*); \/\/Gryab: FIRST parameter is plain text inpu/;"	m	class:rainbow_builder	typeref:typename:int (*)(std::string *,s_byte_array *)
+hash_func	rainbow_reader.h	/^    int (*hash_func)(std::string*, s_byte_array*); \/\/Gryab: FIRST parameter is plain text inpu/;"	m	class:rainbow_reader	typeref:typename:int (*)(std::string *,s_byte_array *)
+includes	includes.h	/^  #define includes$/;"	d
+is_found	rainbow_reader.h	/^    bool is_found = false;$/;"	m	class:rainbow_reader	typeref:typename:bool
+main	main.cpp	/^int main(void){$/;"	f	typeref:typename:int
+my_hash_function	hash_STUB.h	/^int my_hash_function(std::string* plain_text, s_byte_array* hash_output){$/;"	f	typeref:typename:int
+password_gen	rainbow_builder.h	/^    int (*password_gen)(u32, std::string*, std::string*); \/\/Gryab: FIRST parameter is a u32 se/;"	m	class:rainbow_builder	typeref:typename:int (*)(u32,std::string *,std::string *)
+plain_text_found	rainbow_reader.h	/^    std::string plain_text_found;$/;"	m	class:rainbow_reader	typeref:typename:std::string
+r32	common_defines.h	/^  #define r32 /;"	d
+r64	common_defines.h	/^  #define r64 /;"	d
+rainbow_builder	rainbow_builder.cpp	/^rainbow_builder::rainbow_builder(u32 rows, u32 rounds, std::string alphabet, \\$/;"	f	class:rainbow_builder
+rainbow_builder	rainbow_builder.h	/^class rainbow_builder {$/;"	c
+rainbow_builder_h	rainbow_builder.h	/^#define rainbow_builder_h$/;"	d
+rainbow_reader	rainbow_reader.cpp	/^rainbow_reader::rainbow_reader(u32 rounds, std::string alphabet, \\$/;"	f	class:rainbow_reader
+rainbow_reader	rainbow_reader.h	/^class rainbow_reader$/;"	c
+rainbow_reader_h	rainbow_reader.h	/^#define rainbow_reader_h$/;"	d
+rb_alphabet	rainbow_builder.h	/^    std::string rb_alphabet;$/;"	m	class:rainbow_builder	typeref:typename:std::string
+rb_alphabet	rainbow_reader.h	/^    std::string rb_alphabet;$/;"	m	class:rainbow_reader	typeref:typename:std::string
+rb_cols	rainbow_builder.h	/^    u32 rb_cols;$/;"	m	class:rainbow_builder	typeref:typename:u32
+rb_cols	rainbow_reader.h	/^    u32 rb_cols;$/;"	m	class:rainbow_reader	typeref:typename:u32
+rb_rows	rainbow_builder.h	/^    u32 rb_rows;$/;"	m	class:rainbow_builder	typeref:typename:u32
+rb_table_row	rainbow_builder.h	/^    s_string rb_table_row;$/;"	m	class:rainbow_builder	typeref:typename:s_string
+reduction_func	rainbow_builder.h	/^    int (*reduction_func)(s_byte_array*, std::string*); \/\/Gryab: FIRST parameter is hash input/;"	m	class:rainbow_builder	typeref:typename:int (*)(s_byte_array *,std::string *)
+reduction_func	rainbow_reader.h	/^    int (*reduction_func)(s_byte_array*, std::string*); \/\/Gryab: FIRST parameter is hash input/;"	m	class:rainbow_reader	typeref:typename:int (*)(s_byte_array *,std::string *)
+s16	common_defines.h	/^  #define s16 /;"	d
+s32	common_defines.h	/^  #define s32 /;"	d
+s64	common_defines.h	/^  #define s64 /;"	d
+s8	common_defines.h	/^  #define s8 /;"	d
+s_byte_array	common_defines.h	/^  typedef struct s_byte_array{$/;"	s
+s_byte_array	common_defines.h	/^  }s_byte_array;$/;"	t	typeref:struct:s_byte_array
+s_string	common_defines.h	/^  typedef struct s_string{$/;"	s
+s_string	common_defines.h	/^  }s_string;$/;"	t	typeref:struct:s_string
+search_row	rainbow_reader.cpp	/^int rainbow_reader::search_row(s_byte_array* hash_to_search){$/;"	f	class:rainbow_reader	typeref:typename:int
+search_table	rainbow_reader.cpp	/^int rainbow_reader::search_table(s_byte_array* hash_to_search, std::string file_name){$/;"	f	class:rainbow_reader	typeref:typename:int
+size	common_defines.h	/^    u32 size;$/;"	m	struct:s_byte_array	typeref:typename:u32
+size	common_defines.h	/^    u32 size;$/;"	m	struct:s_string	typeref:typename:u32
+table_row	rainbow_reader.h	/^    std::string table_row;$/;"	m	class:rainbow_reader	typeref:typename:std::string
+table_row_hash	rainbow_reader.h	/^    s_byte_array* table_row_hash;$/;"	m	class:rainbow_reader	typeref:typename:s_byte_array *
+table_row_plain_text	rainbow_reader.h	/^    std::string table_row_plain_text;$/;"	m	class:rainbow_reader	typeref:typename:std::string
+u16	common_defines.h	/^  #define u16 /;"	d
+u32	common_defines.h	/^  #define u32 /;"	d
+u64	common_defines.h	/^  #define u64 /;"	d
+u8	common_defines.h	/^  #define u8 /;"	d
+value	common_defines.h	/^    char* value;$/;"	m	struct:s_string	typeref:typename:char *
+value	common_defines.h	/^    u8* value;$/;"	m	struct:s_byte_array	typeref:typename:u8 *
