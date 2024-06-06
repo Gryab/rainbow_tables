@@ -11,23 +11,25 @@ class rainbow_reader
 
     u32 rb_cols;
     
-    std::string rb_alphabet;
+    std::string rb_alphabet, rb_delimiter, table_row;
 
-    int (*hash_func)(std::string*, s_byte_array*); //Gryab: FIRST parameter is plain text input string, SECOND parameter is array for hash output 
+    std::string* computed_plain_text;
 
-    int (*reduction_func)(s_byte_array*, std::string*); //Gryab: FIRST parameter is hash input array, SECOND parameter is string for plain text output
+    int (*hash_func)(std::string*, s_byte_array*); //Gryab: FIRST is plain text input, SECOND is array for hash output 
 
-    std::string table_row;
-    std::string table_row_plain_text;
-    s_byte_array* table_row_hash;
+    int (*reduction_func)(s_byte_array*, std::string*, std::string*); //Gryab: FIRST is hash input array, SECOND is alphabet, THIRD is for plain text output
+
+    int find_plain_text_in_row(u32 round_found);
+
+    int compute_plain_text(s_byte_array* hash_to_search);
 
     int search_row(s_byte_array* hash);
   
   public:
 
-    rainbow_reader(u32 rounds, std::string alphabet, \
+    rainbow_reader(u32 rounds, std::string alphabet, std::string delimiter, \
         int (*hash_function)(std::string* /*plain text input*/, s_byte_array* /*for hash output*/), \
-        int (*reduction_function)(s_byte_array* /*hash input*/, std::string* /*for plain text output*/));
+        int (*reduction_function)(s_byte_array* /*hash input*/, std::string* /*alphabet*/, std::string* /*for plain text output*/));
 
     int search_table(s_byte_array* hash_to_search, std::string file_name);
 

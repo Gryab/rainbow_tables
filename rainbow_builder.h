@@ -1,4 +1,3 @@
-#include <string>
 #ifndef rainbow_builder_h
 
 #include "includes_ext.h"

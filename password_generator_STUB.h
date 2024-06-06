@@ -1,12 +1,11 @@
-#include "hash_STUB.h"
-#include "reduction_STUB.h"
-#include <cstdlib>
 #ifndef password_generator_STUB_h
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 
  @ Gryab: HEADER FOR DEBUGGING AND TROUBLESHOOTING ONLY 
  *@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 
 #include "includes_ext.h"
+#include "hash_STUB.h"
+#include "reduction_STUB.h"
 
 int my_password_generator(u32 seed, std::string* alphabet, std::string* output)
 {
