@@ -1,13 +1,13 @@
 #include "rainbow_builder.h"
 
-rainbow_builder::rainbow_builder(u32 rows, u32 rounds, std::string alphabet, std::string delimiter, \
+rainbow_builder::rainbow_builder(u64 rows, u64 rounds, std::string alphabet, std::string delimiter, \
                                   int (*hash_function)(std::string*, s_byte_array*), \
                                   int (*reduction_function)(s_byte_array*, std::string*, std::string*), \
                                   int (*password_generator)(u32, std::string*, std::string*)) \
                                   : rb_rows(rows), rb_cols(rounds), rb_alphabet(alphabet), rb_delimiter(delimiter), \
                                   hash_func(hash_function), reduction_func(reduction_function), password_gen(password_generator) { return; }
 
-int rainbow_builder::gen_table_row(u32 seed, std::fstream* table_file)
+int rainbow_builder::gen_table_row(u64 seed, std::fstream* table_file)
 {
   std::string row;
   std::string plain_text;
@@ -18,7 +18,7 @@ int rainbow_builder::gen_table_row(u32 seed, std::fstream* table_file)
 
   s_byte_array hash_part = {0};
   
-  for(u32 i = 0; i < this->rb_cols; ++i)
+  for(u64 i = 0; i < this->rb_cols; ++i)
   { 
     this->hash_func(&plain_text, &hash_part);
     this->reduction_func(&hash_part, &(this->rb_alphabet), &plain_text);
@@ -40,7 +40,7 @@ int rainbow_builder::build_table(std::string filename)
   table_file.open(filename.c_str(), std::ios::out);
   if(!table_file.is_open()) return 1;
 
-  for(u32 i = 0; i < this->rb_rows; i++)
+  for(u64 i = 0; i < this->rb_rows; i++)
   {
     this->gen_table_row(i, &table_file);
   }

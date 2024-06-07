@@ -12,16 +12,15 @@
   #define r32 float
   #define r64 double
 
-  #define common_defines
-
   typedef struct s_string{
-    u32 size;
+    u64 size;
     char* value;
   }s_string;
 
   typedef struct s_byte_array{
-    u32 size;
+    u64 size;
     u8* value;
   }s_byte_array;
 
+#define common_defines
 #endif
