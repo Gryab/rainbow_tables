@@ -74,7 +74,10 @@ int rainbow_reader::compute_plain_text(s_byte_array* hash_to_search)
 
 int rainbow_reader::search_table(s_byte_array* hash_to_search, std::string file_name)
 {
-  
+ 
+  if((this->rb_cols * this->rb_alphabet.size() * this->rb_delimiter.size() == 0) + \
+      (this->hash_func == nullptr) + (this->reduction_func == nullptr)) return 1;
+
   this->compute_plain_text(hash_to_search);
 
   std::fstream table_file;
