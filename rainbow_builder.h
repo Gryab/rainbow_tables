@@ -11,7 +11,7 @@ class rainbow_builder
     
     std::string rb_alphabet, rb_delimiter;
 
-    int gen_table_row(u64 seed, std::fstream* table_file);
+    int gen_table_row(u64 seed, std::string* row);
 
     int (*hash_func)(std::string*, s_byte_array*); //Gryab: FIRST is plain text input string, SECOND is array for hash output 
 

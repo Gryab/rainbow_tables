@@ -2,49 +2,52 @@
 #include "includes_inter.h"
 #include "rainbow_builder.h"
 #include "rainbow_reader.h"
-#include "stdio.h"
+
+#include <chrono>
+#include <cstdio>
+
+#include "user_inputs.txt"
 
 int main(void)
 {
 
-  u64 rows = 100000, rounds /*columns*/ = 3;
+#ifdef USER_INPUTS
 
-  std::string Alphabet("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"), delimiter("|||");
+  u64 rows = ROWS, rounds /*columns*/ = ROUNDS;
+
+  std::string Alphabet(ALPHABET), delimiter(DELIMITER), file_name = std::string(FILENAME);
+  #if BUILD
 
   rainbow_builder Rainbow_builder(rows, rounds, Alphabet, delimiter, &my_hash_function, &my_reduction_function, &my_password_generator);
   
-  Rainbow_builder.build_table(std::string("table.txt"));
+  //auto start = std::chrono::high_resolution_clock::now();
 
+  Rainbow_builder.build_table(file_name);
 
+  //std::printf("%f", std::chrono::duration_cast<std::chrono::duration<double>>(std::chrono::high_resolution_clock::now() - start).count());
+  #endif
+  #if READ
   rainbow_reader Rainbow_reader(rounds, Alphabet, delimiter, &my_hash_function, &my_reduction_function);
   
-  {
+  s_byte_array hash = {0};
 
-    std::string __test_text = "tRDbntRD63WlswyzzUkNgLAanOCbntRDbI9ZH8ZH84XlswTEcJepuxTEcJ94210";
+  hash.size = HASH_SIZE;
+  hash.value = (u8*)malloc(HASH_SIZE);
+  if(hash.value == nullptr) return 1;
 
-    std::string __test_output;
+  sscanf_s(HASH, "%llx", (u64*)(hash.value));
 
-    s_byte_array __test_array;
+  Rainbow_reader.search_table(&hash, file_name);
 
-    my_hash_function(&__test_text, &__test_array);
-    
-    for(u64 i = 0; i < 1; i++)
-    {
-      my_reduction_function(&__test_array, &Alphabet, &__test_text);
+  std::string result;
 
-      my_hash_function(&__test_text, &__test_array);
-    }
-
-    printf("%s\n", __test_text.c_str());
-
-    Rainbow_reader.search_table(&__test_array, std::string("table.txt"));
-
-    printf("%i\n", Rainbow_reader.get_found_plain_text(&__test_output));
-
-    printf("%s", __test_output.c_str());
-
+  if(Rainbow_reader.get_found_plain_text(&result) == 0){
+    printf("%s", result.c_str());
+  }else {
+    printf("No suitable plain text found!");
   }
-
+  #endif
+#endif
   return 0;
 
 }

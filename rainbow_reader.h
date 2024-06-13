@@ -33,7 +33,7 @@ class rainbow_reader
 
     int search_table(s_byte_array* hash_to_search, std::string file_name);
 
-    int get_found_plain_text(std::string* output);
+    int get_found_plain_text(std::string* output); //returns 0 if suitable plain text is found, 1 otherwise
 
 };
 
